@@ -1,0 +1,12 @@
+'''Complete the code in order to convert the date format from yyyy-mm-dd to dd-mm-yyyy.'''
+
+
+
+
+'''SOL : 1'''
+
+import regex as re
+def change_format(date):
+    return re.sub(r'(\d{4})-(\d{1,2})-(\d{1,2})', '\\3-\\2-\\1', date)
+date1 = "The Date is 2020-01-02"
+print(change_format(date1))

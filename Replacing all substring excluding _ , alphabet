@@ -1,0 +1,1 @@
+re.sub(r"[^A-Za-z_]+"," ",string)

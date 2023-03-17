@@ -1,0 +1,30 @@
+'''Write a program to convert a given string to snake case format.
+Snake case refers to the style of writing in which each space is replaced by a dash (-) character and the first letter of each word is written in lowercase.
+
+Input Format:
+
+A string
+Output Format:
+
+A string
+Sample Input:
+
+As per govt, Risk Factors include an ageing population, sedentary lifestyle, use of tobacco
+products, alcohol, unhealthy diet, and air pollution. But, there is another side to this,
+70-80% of common cancers are detected in the later stage which is stage 3 and stage 4.
+Sample Output:
+
+as-per-govt,-risk-factors-include-an-ageing-population,-sedentary-lifestyle,-use-of-tobacco
+-products,-alcohol,-unhealthy-diet,-and-air-pollution.-but,-there-is-another-side-to-this,
+-70-80%-of-common-cancers-are-detected-in-the-later-stage-which-is-stage-3-and-stage-4. '''
+
+
+'''SOL 1'''
+
+import re
+def conv_str(s):
+    '''s is a string
+       Output -> A string is expected to be returned'''
+    # YOUR CODE GOES HERE
+    a  = re.sub('\s+','-',s)
+    return a.lower()

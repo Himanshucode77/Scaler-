@@ -1,0 +1,45 @@
+'''Descriction : Write a program to check if a postal code is a valid postal code or not. A valid code has to fulfill the below requirements:
+1. must be a six-digit number.
+2. must not contain more than one alternating repetitive digit pair.
+Alternating repetitive digits are digits that repeat immediately after the next digit. In other words,
+an alternating repetitive digit pair is formed by two equal digits that have just a single digit between them.'''
+
+
+import re
+def postal(code):
+    '''code is a string
+       Output -> True/False is expected to be returned'''
+
+    # YOUR CODE GOES HERE
+    ''' Sol 1'''
+    '''for code 123256 
+        itretion 0 ->>> a = (1), b = (3)
+        itretion 1 ->>> a = (2), b = (2)
+        itretion 2 ->>> a = (3), b = (5)
+        itretion 3 ->>> a = (2), b = (6)
+        zip seperates two numbers for a and b'''
+
+     s  = [a for a, b in zip(code, code[2:]) if a == b ]   
+                                                            
+     if len(code) != 6:
+         return False 
+     elif len(s) > 1:
+         return False
+     else:
+         return True
+    
+    
+    ''' Sol 2 '''
+    
+    
+    a = None
+    a = re.findall(r'(\d)(?=\d\1)',code)
+    pattern =re.compile(r'')
+    if len(code) != 6:
+        return False
+    elif len(a) > 1:
+        return False 
+    else:
+        return True
+
+    

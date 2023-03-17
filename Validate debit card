@@ -1,0 +1,45 @@
+'''
+You opened your bank account in a XYZ bank. You received your debit card recently but you want to check whether its a valid debit card or not.
+
+A valid debit card has the following characteristics:
+
+It must start with a 4,5 or 6.
+It must contain exactly 16 digits.
+It must only consist of digits
+It must NOT use any separator like ' ', '_', etc.
+It must NOT have 4 or more consecutive repeated digits.
+Sample Input:
+
+"4245647893112578"
+Sample Output:
+
+"Valid"
+Sample Explanation:
+
+Given Input is according to the conditions given in the description:
+
+1. It starts with 4.
+2. No consecutive repetition of a digit more than 4.
+3. Length is 16
+4. Input consists of digits only.
+5. Not separated by " " or "_"
+'''
+
+''' SOL  1'''
+import re
+def card(x):
+    '''
+    Input x : 16 digit number
+    Ouput:  Return whether its a valid debit card number or not
+    '''
+    # YOUR CODE GOES HERE
+    if len(x) != 16:
+        return 'Invalid'
+    elif x[0] != '4' and x[0] != '5' and x[0] != '6':
+        return 'Invalid' 
+    elif re.search('\d{16}',x) is  None:
+        return 'Invalid'
+    elif re.search('(?:-?\d{4})',x) is not None:
+        return 'Valid'
+
+  
